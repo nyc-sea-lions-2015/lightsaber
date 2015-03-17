@@ -4,8 +4,13 @@ describe 'Index Controller' do
 
   #-------- READ TESTS
   it "Should get the route" do
-    get '/'
+    get '/sealions'
     expect(last_response).to be_ok
+  end
+
+  it "Should get correct response body" do
+    get '/sealions'
+    expect(last_response.body).to eq("Hey Sealions!!!")
   end
 
   #-------- CREATE TESTS
@@ -24,7 +29,7 @@ describe 'Index Controller' do
   it 'Should follow redirection' do
     post '/sealions'
     follow_redirect!
-    expect(last_response.body).to eq("Lightsaber Challenge. It really works!!!")
+    expect(last_response.body).to eq("Hey Sealions!!!")
   end
 
   #--------- UPDATE TESTS
@@ -43,7 +48,7 @@ describe 'Index Controller' do
   it 'Should follow redirection' do
     put '/sealions'
     follow_redirect!
-    expect(last_response.body).to eq("Lightsaber Challenge. It really works!!!")
+    expect(last_response.body).to eq("Hey Sealions!!!")
   end
 
   #-------- DELETE TESTS
@@ -61,7 +66,7 @@ describe 'Index Controller' do
   it 'Should follow redirection' do
     delete '/sealions'
     follow_redirect!
-    expect(last_response.body).to eq("Lightsaber Challenge. It really works!!!")
+    expect(last_response.body).to eq("Hey Sealions!!!")
   end
 
 end
