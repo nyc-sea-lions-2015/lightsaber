@@ -11,7 +11,7 @@ end
 
 #Read
 get '/sealions/:ID' do
-  "Sealion #{params[:id]}"
+  "Sealion"
 end
 
 #Update
@@ -20,6 +20,6 @@ put '/sealions/:ID' do
 end
 
 #Delete
-delete '/sealions/:id' do
+delete '/sealions/:ID' do
   redirect '/'
 end
