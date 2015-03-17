@@ -1,5 +1,17 @@
 require 'sinatra'
 
 get '/' do
-  'Kevin John Gabriel Alwell'
+  'I am a Sealion'
+end
+
+post '/sealions' do
+  redirect '/'
+end
+
+put '/edit/sealions' do
+  redirect '/'
+end
+
+delete '/delete/sealions' do
+  redirect '/'
 end
