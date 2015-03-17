@@ -1,25 +1,25 @@
 require 'sinatra'
 
 get '/' do
-  "Lauren Nicole Roth"
+  'Sealions'
 end
 
 #Create
 post '/sealions' do
-
+  redirect '/'
 end
 
 #Read
-get '/sealions/:id' do
-
+get '/sealions/:ID' do
+  "Sealion #{params[:id]}"
 end
 
 #Update
-put '/sealions/:id' do
-
+put '/sealions/:ID' do
+  redirect '/'
 end
 
 #Delete
 delete '/sealions/:id' do
-
+  redirect '/'
 end
