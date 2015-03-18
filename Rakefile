@@ -7,7 +7,34 @@ task "console" do
     exec "irb -r./environment"
 end
 
+
 namespace :generate do
+
+
+ desc "Create an empty model in app/models, e.g., rake generate:model NAME=User"
+  task :model do
+    unless ENV.has_key?('NAME')
+      raise "Must specificy model name, e.g., rake generate:model NAME=User"
+    end
+
+    model_name     = ENV['NAME'].camelize
+    model_filename = ENV['NAME'].underscore + '.rb'
+    model_path = APP_ROOT.join('app', 'models', model_filename)
+
+    if File.exist?(model_path)
+      raise "ERROR: Model file '#{model_path}' already exists"
+    end
+
+    puts "Creating #{model_path}"
+    File.open(model_path, 'w+') do |f|
+      f.write(<<-EOF.strip_heredoc)
+        class #{model_name} < ActiveRecord::Base
+          # Remember to create a migration!
+        end
+      EOF
+    end
+  end
+
   task :migration do
     unless ENV.has_key?('NAME')
       raise "Must specificy migration name, e.g., rake generate:migration NAME=create_tasks"
@@ -35,7 +62,7 @@ end
 
 namespace :db do
   desc "Drop, create, and migrate the database"
-  task :reset => [:drop, :create, :migrate]
+  task :reset => [:drop, :create, :migrate, :seed, "test:prepare"]
 
   desc "Create the databases at #{DB_NAME}"
   task :create do
@@ -58,14 +85,14 @@ namespace :db do
     end
   end
 
-  desc "Populate the database with dummy data by running db/seeds.rb"
-  task :seed do
-    require APP_ROOT.join('db', 'seeds.rb')
-  end
-
   desc "Returns the current schema version number"
   task :version do
     puts "Current version: #{ActiveRecord::Migrator.current_version}"
+  end
+
+  desc "Populate the database with dummy data by running db/seeds.rb"
+  task :seed do
+    require APP_ROOT.join('db', 'seeds.rb')
   end
 
   namespace :test do
