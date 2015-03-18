@@ -1,5 +1,3 @@
-require 'sinatra'
-
 
 get '/' do
   "Helllloo there!"
@@ -7,6 +5,10 @@ end
 
 get '/sealions' do
   "...Lions! Tigers! Bears! Oh My!"
+end
+
+get '/sealions/:ID' do
+  "This id # is 9"
 end
 
 post '/post_a_new_post' do
