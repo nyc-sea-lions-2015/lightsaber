@@ -1,10 +1,14 @@
 require 'sinatra'
 
 get '/' do
-  "Ryan Immesberger"
+  seali = Sealion.pluck(:name)
+  seali.join(", ")
+
 end
 
 post '/post' do
+
+  Sealion.create(params(:name))
   redirect '/'
 end
 
