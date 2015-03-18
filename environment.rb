@@ -4,7 +4,9 @@ require 'sinatra'
 
 require 'bundler/setup'
 require 'rubygems'
+require 'pg'
 
+require 'active_record'
 require 'uri'
 require 'pathname'
 
@@ -14,3 +16,6 @@ require 'pathname'
 
  #Load Controllers
  Dir[APP_ROOT.join('app', 'controllers', '*.rb')].each { |file| require file }
+ Dir[APP_ROOT.join('app', 'models', '*.rb')].each { |file| require file }
+
+require APP_ROOT.join('database')
