@@ -1,21 +1,29 @@
 require 'sinatra'
-
-get '/' do
-  "Lightsaber Challenge. It really works!!!"
-end
+#----------READ
 
 get '/sealions' do
-  'Hey Sealions!!!'
+  redirect '/sealions/new'
 end
 
-post '/sealions' do
-  redirect '/sealions'
+# --------CREATE
+get '/sealions/new' do
+  "There will be a form here"
+  # erb :index
 end
 
+post '/sealions/new/:name' do
+  Sealion.create(params[:name])
+  redirect '/sealions/new'
+  # erb :index
+end
+
+#---------UPDATE
 put '/sealions' do
   redirect '/sealions'
 end
 
-delete '/sealions' do
+
+#---------DESTROY
+delete '/remove' do
   redirect '/sealions'
 end
