@@ -6,6 +6,7 @@ end
 
 #Create
 post '/sealions' do
+  Sealion.create(:name => params[:name])
   redirect '/'
 end
 
