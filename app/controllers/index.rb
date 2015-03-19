@@ -1,7 +1,14 @@
 require 'sinatra'
 
 get '/' do
-  'I am a Sealion'
+  @sealions = Sealion.all
+  erb :'/sealion/view'
+end
+
+get '/sealion/:id' do
+  @sealion = Sealion.find(params[:id])
+
+  erb:'/sealion/resources'
 end
 
 post '/sealions' do
@@ -9,14 +16,29 @@ post '/sealions' do
   redirect '/'
 end
 
-put '/sealions/:id/edit' do
- s = Sealion.find(params{:id})
+get '/sealion/:id/edit' do
+  @sealion = Sealion.find(params[:id])
 
-  redirect '/'
+  erb :'/sealion/edit'
 end
 
-delete '/sealions/:id/delete' do
-  s = Sealion.find(params[:id])
-  s.destroy
-  redirect '/'
+put '/sealion/:id/edit' do
+  @sealion = Sealion.find(params[:id])
+
+  @sealion.save
+
+  redirect "/sealion/#{@sealion.id}"
+end
+
+get '/sealion/:id/delete' do
+  @sealion = Sealion.find(params[:id])
+  erb :'/sealion/delete'
+end
+
+
+delete '/sealion/:id/delete' do
+ @sealion = Sealion.find(params[:id])
+
+ @sealion.destroy
+ redirect '/'
 end

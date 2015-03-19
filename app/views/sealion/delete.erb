@@ -1,0 +1,9 @@
+<form action="/sealion/<%= @sealion.id %>/edit" method="post" id="edit">
+    <br>
+    <input type="hidden" name="_method" value="put">
+    <br>
+    <textarea name="comment" id="styled" ><%= @sealion.comment %></textarea>
+    <br>
+    <input type="submit">
+    <br>
+  </form>

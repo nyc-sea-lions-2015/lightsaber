@@ -16,3 +16,10 @@ require 'pathname'
  #Load Controllers
  Dir[APP_ROOT.join('app', 'controllers', '*.rb')].each { |file| require file }
  require APP_ROOT.join('database')
+
+require 'erb'
+
+configure do
+ set :root, APP_ROOT.to_path
+ set :views, File.join(APP_ROOT,"app","views")
+end
