@@ -1,7 +1,9 @@
+require 'active_record'
+
 require ::File.expand_path('../environment', __FILE__)
 
 require 'rake'
-# require 'active_record'
+
 
 desc 'Start IRB with application environment loaded'
 task "console" do
@@ -9,6 +11,7 @@ task "console" do
 end
 
 namespace :generate do
+  desc 'Generate a migration'
   task :migration do
     unless ENV.has_key?('NAME')
       raise "Must specificy migration name, e.g., rake generate:migration NAME=create_tasks"
