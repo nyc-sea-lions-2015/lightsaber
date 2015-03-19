@@ -27,8 +27,11 @@ describe 'Index Controller' do
   end
 
   #UPDATE
-  it 'Should process a put request on id 1' do
-    put '/sealions/1'
+  it 'Should process a put request to change name' do
+    put '/sealions/'
+    sealion = Sealion.find_by(name: 'Lauren')
+    sealion.update_attribute(:name, 'Snootie')
+    expect(sealion.name).to eql('Snootie')
     expect(last_response).to be_redirect
     follow_redirect!
     expect(last_response).to be_ok

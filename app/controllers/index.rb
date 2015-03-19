@@ -17,6 +17,7 @@ end
 
 #Update
 put '/sealions/:id' do
+  Sealion.update_attribute(:name => params[:name])
   redirect '/'
 end
 
