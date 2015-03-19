@@ -1,0 +1,6 @@
+<%= params.inspect %>
+
+<form action='/sealions?name=<% params[:name] %>' method = 'POST'>
+  ADD: <input type='text' name='<% params[:name] %>'>
+  <input type='submit'>
+</form>
