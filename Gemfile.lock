@@ -56,8 +56,8 @@ PLATFORMS
   x64-mingw32
 
 DEPENDENCIES
-  activerecord (~> 4.1)
-  activesupport (~> 4.1)
+  activerecord
+  activesupport
   pg
   rack-test
   rake

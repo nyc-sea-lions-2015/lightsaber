@@ -1,12 +1,13 @@
-ruby '2.0.0'
+
 source 'https://rubygems.org'
 gem 'sinatra'
 
-gem 'activesupport', '~>4.1'
-gem 'activerecord', '~>4.1'
+gem 'activesupport'
+gem 'activerecord'
 
 gem 'rake'
 gem 'pg'
+
 group :test do
   gem 'rspec'
   gem 'rack-test'
