@@ -1,0 +1,1 @@
+natalia = Sealion.create(name: "Natalia", favourite_dance: "salsa")

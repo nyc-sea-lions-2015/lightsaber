@@ -4,6 +4,8 @@ require 'sinatra'
 
 require 'bundler/setup'
 require 'rubygems'
+require "pg"
+require "active_record"
 
 require 'uri'
 require 'pathname'
