@@ -1,0 +1,20 @@
+Sealion.create([
+  {:first_name => "Angel", :last_name => "Baek"},
+  {:first_name => "Ben", :last_name => "Cheng"},
+  {:first_name => "Daniel", :last_name => "Asselin"},
+  {:first_name => "Eveanandi", :last_name => "Butler"},
+  {:first_name => "Hoa", :last_name => "Nguyen"},
+  {:first_name => "Kevin", :last_name => "Alwell"},
+  {:first_name => "Kiran", :last_name => "Chitraju"},
+  {:first_name => "Kurt", :last_name => "Schnelker"},
+  {:first_name => "Lauren Nicole", :last_name => "Roth"},
+  {:first_name => "Malcolm", :last_name => "Bouzi"},
+  {:first_name => "Max", :last_name => "Rater"},
+  {:first_name => "Natalia", :last_name => "Bryzhatenko"},
+  {:first_name => "Ryan", :last_name => "Blecher"},
+  {:first_name => "Ryan", :last_name => "Immesberger"},
+  {:first_name => "Samantha", :last_name => "Guergenenov"},
+  {:first_name => "Stephanie", :last_name => "Lo"},
+  {:first_name => "Tara", :last_name => "Frye"},
+  {:first_name => "Tracy", :last_name => "Teague"}
+  ])
