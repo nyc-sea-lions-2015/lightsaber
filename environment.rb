@@ -17,3 +17,5 @@ Dir[APP_ROOT.join('app', 'models', '*.rb')].each { |file| require file }
 
 #Load Controllers
 Dir[APP_ROOT.join('app', 'controllers', '*.rb')].each { |file| require file }
+
+require APP_ROOT.join('database')
