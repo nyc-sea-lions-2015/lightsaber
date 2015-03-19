@@ -1,29 +1,70 @@
 require 'sinatra'
 #----------READ
+get '/' do
+  redirect '/sealions'
+end
 
+#All Entries
 get '/sealions' do
-  redirect '/sealions/new'
+  # erb :index
+  erb(:'index', locals: {sealions: Sealion.all})
 end
 
-# --------CREATE
+#Get the new entry form
 get '/sealions/new' do
-  "There will be a form here"
-  # erb :index
+  erb :'new'
 end
 
-post '/sealions/new/:name' do
-  Sealion.create(params[:name])
-  redirect '/sealions/new'
-  # erb :index
+#Show Individual Entry
+get '/sealions/:id' do
+  erb(:'show', locals: {sealion: Sealion.find_by_id(params[:id])})
 end
 
-#---------UPDATE
-put '/sealions' do
-  redirect '/sealions'
+get '/sealions/:id/edit' do
+  sealion = Sealion.find_by(id: params[:id])
+  erb :'edit', locals: {sealion: sealion}
+end
+
+#Post for add new entry
+post '/sealions' do
+  new_sealion = Sealion.new(name: params[:name])
+  if new_sealion.save
+    redirect "/sealions"
+  else
+    [402,"You did something wrong"]
+  end
 end
 
 
-#---------DESTROY
-delete '/remove' do
-  redirect '/sealions'
+#Update A Blog Post (Edit)
+put '/sealions/:id' do
+  sealion = Sealion.find_by(id: params[:id])
+
+  if sealion
+    sealion.name = params[:name]
+
+    if sealion.save
+      redirect "/sealions"
+    else
+      [500, 'something went wrong']
+    end
+
+  else
+    [404, "No blog post for you."]
+  end
+end
+
+get '/sealions/:id/delete' do
+  erb :'delete', locals: {sealion: Sealion.find_by_id(params[:id])}
+end
+
+# Delete Route
+delete '/sealions/:id' do
+  sealion = Sealion.find_by_id(params[:id])
+  if sealion
+    sealion.destroy
+    redirect "/sealions"
+  else
+    [500, "Some went TERRIBLY wrong"]
+  end
 end
