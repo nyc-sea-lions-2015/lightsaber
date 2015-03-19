@@ -6,7 +6,7 @@ get '/' do
 end
 
 get '/sealions' do
-  'Yay, sea lions!'
+  # 'Yay, sea lions!'
   @sealion = Sealion.all
   @names = []
   @sealion.each {|person| @names << (person.first_name + " " + person.last_name)}
