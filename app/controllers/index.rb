@@ -29,7 +29,7 @@ end
 post '/sealions' do
   new_sealion = Sealion.new(name: params[:name])
   if new_sealion.save
-    redirect "/sealions/#{new_sealion.id}"
+    redirect "/sealions"
   else
     [402,"You did something wrong"]
   end
@@ -44,7 +44,7 @@ put '/sealions/:id' do
     sealion.name = params[:name]
 
     if sealion.save
-      redirect "/sealions/#{sealion.id}"
+      redirect "/sealions"
     else
       [500, 'something went wrong']
     end
@@ -54,18 +54,17 @@ put '/sealions/:id' do
   end
 end
 
-# get '/entries/:id/delete' do
-#   erb :'/entries/delete', locals: {entry: Entry.find_by_id(params[:id])}
-# end
+get '/sealions/:id/delete' do
+  erb :'delete', locals: {sealion: Sealion.find_by_id(params[:id])}
+end
 
-# #Add Delete Route
-# delete '/entries/:id' do
-#   p "hello"
-#   entry = Entry.find_by_id(params[:id])
-#   if entry
-#     entry.destroy
-#     redirect "/entries"
-#   else
-#     [500, "Some went TERRIBLY wrong"]
-#   end
-# end
+# Delete Route
+delete '/sealions/:id' do
+  sealion = Sealion.find_by_id(params[:id])
+  if sealion
+    sealion.destroy
+    redirect "/sealions"
+  else
+    [500, "Some went TERRIBLY wrong"]
+  end
+end
