@@ -16,8 +16,6 @@ end
 get '/sealions/:id' do
   @sealion = Sealion.find(params[:id])
   @sealion.first_name + " " + @sealion.last_name
-  # @id = params[:id]
-  # "#{@id}"
 end
 
 post '/sealions/' do

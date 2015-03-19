@@ -1,6 +1,8 @@
 require_relative '../spec_helper'
 
 describe 'IndexController' do
+  let(:ben){Sealion.create({:first_name => "Ben", :last_name => "Cheng"}, {:first_name => "Ryan", :last_name => "Blecher"})}
+
   it 'should redirect to /sealions' do
     get '/'
     follow_redirect!
@@ -16,6 +18,7 @@ describe 'IndexController' do
   it 'Should get the /sealions/:ID route' do
       get '/sealions/:id'
       # expect(last_response).to be_ok
+      expect(last_response.body).to be_a(String)
   end
 
   it 'Should post a new route' do
