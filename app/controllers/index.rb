@@ -9,6 +9,15 @@ get '/sealions' do
   erb :sealion
 end
 
+get '/sealions/:id' do
+  @cur_sealion = Sealion.find_by(id: params[:id])
+  if @cur_sealion
+    erb :show_sealion
+  else
+    [404, "no sealion found"]
+  end
+end
+
 get '/sealions/new' do
   erb :new_sealion
 end
@@ -23,8 +32,19 @@ post '/sealions' do
   end
 end
 
-put '/put' do
-  redirect '/'
+put '/sealions/:id' do
+  cur_sealion = Sealion.find_by(id: params[:id])
+
+  if cur_sealion
+    cur_sealion.name = params[:name]
+    if cur_sealion.save
+      redirect '/sealions'
+    else
+      [500, "didn't save update"]
+    end
+  else
+    [404, "no sealion found"]
+  end
 end
 
 delete '/delete' do
