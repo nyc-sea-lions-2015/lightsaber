@@ -13,4 +13,8 @@ require 'pathname'
  APP_NAME = APP_ROOT.basename.to_s
 
  #Load Controllers
+ Dir[APP_ROOT.join('app', 'models', '*.rb')].each { |file| require file }
+
  Dir[APP_ROOT.join('app', 'controllers', '*.rb')].each { |file| require file }
+
+ require APP_ROOT.join('database')
