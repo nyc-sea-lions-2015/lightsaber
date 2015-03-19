@@ -1,0 +1,17 @@
+<table>
+
+    <tr>
+      <td><%=@sealion.comment%></td>
+    </tr>
+</table>
+
+
+<form action="/sealion/<%=@sealion.id%>/delete" method="post" >
+  <input type="hidden" name="_method" value="delete" />
+  <input type="submit" value="Delete" />
+</form>
+
+<form action="/sealion/<%=@sealion.id%>/edit" method="get" >
+
+  <input type="submit" value="Edit" />
+</form>

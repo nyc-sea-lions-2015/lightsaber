@@ -1,0 +1,8 @@
+<h2> Aquarium </h2>
+<table>
+  <% @sealions.each do |sealion| %>
+    <tr>
+      <td><a href='/sealion/<%=sealion.id%>'><%=sealion.name%></td>
+    </tr>
+  <%end%>
+</table>
