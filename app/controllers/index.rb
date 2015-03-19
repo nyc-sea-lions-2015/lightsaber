@@ -22,3 +22,17 @@ end
 delete '/delete_me' do
   redirect '/sealions'
 end
+
+#create
+post '/sealion/:name' do
+  new_sealion = Sealion.create(params[:name])
+  redirect '/sealions'
+end
+
+#update
+put '/sealion/:name' do
+  charlie = Sealion.find_by(params[:name])
+  charlie.update_attribute(name: "Charlotte")
+  redirect '/sealions'
+end
+
