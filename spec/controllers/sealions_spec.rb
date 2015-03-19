@@ -1,6 +1,6 @@
 require_relative "../spec_helper"
 describe "SealionsController" do
- let(:sealion) {Sealion.create(name: "Bob", favourite_dance: "Tango")}
+ let(:sealion) {Sealion.create(name: "Bob", favourite_dance: "Tango", id: 2)}
 
   it "should process the get /sealions route"  do
     get "/sealions"
@@ -10,8 +10,8 @@ describe "SealionsController" do
   end
 
   it "should process the get /sealions/:id route" do
-    get "/sealions/1"
-    expect(last_response.body).to be_ok
+    get "/sealions/2"
+    expect(last_response).to be_ok
   end
 
   it "should process the post /sealions route" do
