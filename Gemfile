@@ -1,6 +1,10 @@
 source 'https://rubygems.org'
 
 gem 'sinatra'
+gem 'activerecord'
+gem 'rake'
+gem 'pg'
+gem 'activesupport'
 
 group :test do
     gem 'rspec'

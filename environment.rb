@@ -1,12 +1,14 @@
 ENV['BUNDLE_GEMFILE'] ||= File.expand_path('../Gemfile', __FILE__)
 
 require 'sinatra'
-
+require 'pg'
 require 'bundler/setup'
 require 'rubygems'
 
 require 'uri'
 require 'pathname'
+
+require 'active_record'
 
 
  APP_ROOT = Pathname.new(File.expand_path('../', __FILE__))
