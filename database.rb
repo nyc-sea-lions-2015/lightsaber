@@ -1,3 +1,5 @@
+require 'active_record'
+
 if Sinatra::Application.development?
   ActiveRecord::Base.logger = Logger.new(STDOUT)
 end
