@@ -20,10 +20,10 @@ get '/sealions/:id' do
   erb(:'show', locals: {sealion: Sealion.find_by_id(params[:id])})
 end
 
-# get '/entries/:id/edit' do
-#   entry = Entry.find_by(id: params[:id])
-#   erb :'entries/edit', locals: {entry: entry}
-# end
+get '/sealions/:id/edit' do
+  sealion = Sealion.find_by(id: params[:id])
+  erb :'edit', locals: {sealion: sealion}
+end
 
 #Post for add new entry
 post '/sealions' do
@@ -36,24 +36,23 @@ post '/sealions' do
 end
 
 
-# #Update A Blog Post (Edit)
-# put '/entries/:id' do
-#   entry = Entry.find_by(id: params[:id])
+#Update A Blog Post (Edit)
+put '/sealions/:id' do
+  sealion = Sealion.find_by(id: params[:id])
 
-#   if entry
-#     entry.title = params[:title]
-#     entry.body = params[:body]
+  if sealion
+    sealion.name = params[:name]
 
-#     if entry.save
-#       redirect "/entries/#{entry.id}"
-#     else
-#       [500, 'something went wrong']
-#     end
+    if sealion.save
+      redirect "/sealions/#{sealion.id}"
+    else
+      [500, 'something went wrong']
+    end
 
-#   else
-#     [404, "No blog post for you."]
-#   end
-# end
+  else
+    [404, "No blog post for you."]
+  end
+end
 
 # get '/entries/:id/delete' do
 #   erb :'/entries/delete', locals: {entry: Entry.find_by_id(params[:id])}
@@ -69,35 +68,4 @@ end
 #   else
 #     [500, "Some went TERRIBLY wrong"]
 #   end
-# end
-
-# get '/' do
-#   redirect '/sealions'
-# end
-
-# get '/sealions' do
-#   redirect '/sealions/new'
-# end
-
-# # --------CREATE
-# get '/sealions/new' do
-#   "There will be a form here"
-#   # erb :index
-# end
-
-# post '/sealions/new/:name' do
-#   Sealion.create(params[:name])
-#   redirect '/sealions/new'
-#   # erb :index
-# end
-
-# #---------UPDATE
-# put '/sealions' do
-#   redirect '/sealions'
-# end
-
-
-# #---------DESTROY
-# delete '/remove' do
-#   redirect '/sealions'
 # end
