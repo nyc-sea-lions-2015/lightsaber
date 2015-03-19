@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Welcome to the Sealions!</title>
+  </head>
+  <body>
+    <button><a href="/sealions/new">Add New Sealion to our collection!</a></button>
+    <ul>
+      <% sealions.each do |lion| %>
+        <li><a href="/sealions/<%= lion.id %>"><%= lion.name %></a>
+    <button>
+      <a href="/sealions/<%= lion.id %>/edit">Edit</a>
+    </button>
+    <button>
+      <a href="/sealions/<%= lion.id %>/delete">Delete</a>
+    </button>
+  </li>
+      <% end %>
+    </ul>
+  </body>
+</html>
