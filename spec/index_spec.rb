@@ -21,52 +21,52 @@ describe 'IndexController' do
     end
   end
 
-  describe "Get '/sealions/:ID'" do
+  describe "Get '/sealions/:id'" do
     it "loads a specific sealion" do
-      get '/sealions/:ID'
+      get '/sealions/:id'
       expect(last_response).to be_ok
     end
   end
 
   describe "Post '/sealions'" do
     it "creates a new sealion" do
-      get '/sealions'
+      post '/sealions'
       expect(last_response).to be_ok
     end
 
-    it "redirects to '/'" do
+    it "redirects to '/sealions'" do
       post '/sealions'
       expect(last_response).to be_redirect
       follow_redirect!
-      expect(last_request.path).to eq('/')
+      expect(last_request.path).to eq('/sealions')
     end
   end
 
-  describe "Put '/sealions/:ID'" do
+  describe "Put '/sealions/:id'" do
     it "edits an existing sealion" do
-      get '/sealions/:ID'
+      put '/sealions/:id'
       expect(last_response).to be_ok
     end
 
-    it "redirects to '/'" do
-      put '/sealions/:ID'
+    it "redirects to '/sealions'" do
+      put '/sealions/:id'
       expect(last_response).to be_redirect
       follow_redirect!
-      expect(last_request.path).to eq('/')
+      expect(last_request.path).to eq('/sealions')
     end
   end
 
-  describe "Delete '/sealions/:ID'" do
+  describe "Delete '/sealions/:id'" do
     it "destroys an existing sealion" do
-      get '/sealions/:ID'
+      delete '/sealions/:id'
       expect(last_response).to be_ok
     end
 
-    it "redirects to '/'" do
-      delete '/sealions/:ID'
+    it "redirects to '/sealions'" do
+      delete '/sealions/:id'
       expect(last_response).to be_redirect
       follow_redirect!
-      expect(last_request.path).to eq('/')
+      expect(last_request.path).to eq('/sealions')
     end
   end
 end

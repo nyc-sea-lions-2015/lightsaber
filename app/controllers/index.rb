@@ -5,24 +5,24 @@ get '/' do
 end
 
 get '/sealions' do
-  "< A list of Sealions >"
+  Sealion.all.to_json
 end
 
-get '/sealions/:ID' do
-  "< A specific Sealion >"
+get '/sealions/:id' do
+  Sealion.find(params[:id]).to_json
 end
 
-post '/sealions' do
-  # "< Create a new Sealion >"
-  redirect '/'
+post '/sealions/' do
+  Sealion.create(params)
+  redirect '/sealions'
 end
 
-put '/sealions/:ID' do
-  # "< Edit existing Sealion >"
-  redirect '/'
+put '/sealions/:id' do
+  Sealion.find(params[:id]).update_attributes!(params)
+  redirect '/sealions'
 end
 
-delete '/sealions/:ID' do
-  # "< Delete a specific Sealion >"
-  redirect '/'
+delete '/sealions/:id' do
+  Sealion.find(params[:id]).destroy!
+  redirect '/sealions'
 end
