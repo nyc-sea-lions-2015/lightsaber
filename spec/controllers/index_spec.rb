@@ -1,32 +1,40 @@
 require_relative '../spec_helper'
 
 describe 'Index Controller' do
+  let(:person) {Person.create(first:"Kiran", last:"c")}
 
-  it 'Should get the / route' do
-    get '/'
-    expect(last_response).to be_ok
-    expect(last_response.body).to include('Kiran C')
-  end
-
-  it 'does an http post to the route /post_controller' do
-    post '/post_controller'
-    expect(last_response).to be_redirect
-    follow_redirect!
+  describe "GET /people/:id" do
+    it "loads the people page" do
+    get '/people/:id'
     expect(last_response).to be_ok
   end
+end
 
-  it 'does an http post to the route /put_controller' do
-    put '/put_controller/with_a_param=true'
-    expect(last_response).to be_redirect
-    follow_redirect!
-    expect(last_response).to be_ok
+describe "POST /people" do
+  it "creates people, redirects to index" do
+   post '/people', params={person:{first:"Kiran", last: "c"}}
+   expect(last_response).to be_redirect
+   follow_redirect!
+   last_request.path.should == "/"
   end
+end
 
-  it 'does an http delete to the route /delete_controller' do
-    delete '/delete_controller'
-    expect(last_response).to be_redirect
-    follow_redirect!
-    expect(last_response).to be_ok
+ describe "DELETE /people" do
+  it "deletes people from database" do
+   delete '/people/:id'
+   expect(last_response).to be_redirect
+   follow_redirect!
+   last_request.path.should == "/"
   end
+end
+
+  describe "PUT /people" do
+  it "Updates a record in the database" do
+   put '/people/:id'
+   expect(last_response).to be_redirect
+   follow_redirect!
+   last_request.path.should == "/"
+  end
+end
 
 end

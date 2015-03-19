@@ -1,15 +1,20 @@
-get '/' do
-  "Kiran C"
+get '/people/:id' do
+  @thepeeps = Person.find(params[:id])
+  erb :'/'
 end
 
-post '/post_controller' do
+post '/people' do
+  @thepeeps = Person.create(params[:first])
   redirect '/'
 end
 
-delete '/delete_controller' do
+delete '/people/:id' do
+  @thepeeps = Person.find(params[:id]).destroy
   redirect '/'
 end
 
-put '/put_controller/with_a_param=true' do
+put '/people/:id' do
+  @thepeeps = person.find(params[:id])
+  @thepeeps.update(first: params[:first])
   redirect '/'
 end
