@@ -17,7 +17,7 @@ describe 'Index Controller' do
   end
 
   it 'Should verify redirect' do
-    put '/edit/sealions'
+    put '/sealions/:id/edit', :params=>{with_a_param: true}
     expect(last_response).to be_redirect
     follow_redirect!
     expect(last_response).to be_ok
@@ -25,7 +25,7 @@ describe 'Index Controller' do
   end
 
   it 'Should verify a delete route' do
-    delete '/delete/sealions'
+    delete '/sealions/:id/delete'
     expect(last_response).to be_redirect
     follow_redirect!
     expect(last_response).to be_ok
