@@ -1,7 +1,8 @@
 require_relative 'environment'
-#File.expand_path('../environment', __FILE__)
+
 # require 'active_record'
-#require 'rake'
+# ::File.expand_path('../environment', __FILE__)
+# require 'rake'
 
 desc 'Start IRB with application environment loaded'
 task "console" do

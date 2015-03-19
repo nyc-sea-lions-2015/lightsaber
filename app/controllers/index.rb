@@ -1,22 +1,29 @@
 require 'sinatra'
-
-get '/' do
-  redirect '/sealions'
-end
+#----------READ
 
 get '/sealions' do
-  "Test"
+  redirect '/sealions/new'
 end
 
-post '/sealions/:name' do
+# --------CREATE
+get '/sealions/new' do
+  "There will be a form here"
+  # erb :index
+end
+
+post '/sealions/new/:name' do
   Sealion.create(params[:name])
-  erb :index
+  redirect '/sealions/new'
+  # erb :index
 end
 
+#---------UPDATE
 put '/sealions' do
   redirect '/sealions'
 end
 
+
+#---------DESTROY
 delete '/remove' do
   redirect '/sealions'
 end
