@@ -39,8 +39,11 @@ describe 'Index Controller' do
   end
 
   #DELETE
-  it 'Should process a delete request on id 3' do
-    delete '/sealions/:ID'
+  it 'Should process a delete request on first sealion' do
+    delete '/sealions/'
+    sealion = Sealion.find_by(name: 'Lauren')
+    sealion.destroy
+    expect(sealion.name).to be_null
     expect(last_response).to be_redirect
     follow_redirect!
     expect(last_response).to be_ok
