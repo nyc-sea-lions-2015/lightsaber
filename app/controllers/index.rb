@@ -20,7 +20,7 @@ get '/sealions/:id' do
   # "#{@id}"
 end
 
-post '/sealions/:id' do
+post '/sealions/' do
   new_sealion = Sealion.create(params)
   redirect '/sealions'
 end
