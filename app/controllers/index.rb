@@ -22,6 +22,11 @@ get '/sealions/new' do
   erb :new_sealion
 end
 
+get '/sealions/:id/edit' do
+  sealion = Sealion.find_by(id: params[:id])
+  erb :edit_sealion, locals: {cur_sealion: sealion}
+end
+
 post '/sealions' do
   new_sealion = Sealion.new(name: params[:name])
 
