@@ -23,5 +23,6 @@ end
 
 #Delete
 delete '/sealions/:id' do
+  Sealion.find(params[:id]).destroy
   redirect '/'
 end
