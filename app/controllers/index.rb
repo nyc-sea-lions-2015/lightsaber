@@ -10,16 +10,16 @@ post '/sealions' do
 end
 
 #Read
-get '/sealions/:ID' do
+get '/sealions/:id' do
   "Sealion"
 end
 
 #Update
-put '/sealions/:ID' do
+put '/sealions/:id' do
   redirect '/'
 end
 
 #Delete
-delete '/sealions/:ID' do
+delete '/sealions/:id' do
   redirect '/'
 end
