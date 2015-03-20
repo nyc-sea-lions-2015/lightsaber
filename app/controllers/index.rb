@@ -35,7 +35,7 @@ post '/sealions' do
   redirect "/sealions/#{new_lion.id}"
 end
 
-put '/flippers/:id' do
+put '/sealions/:id' do
   @edit_lion = Sealion.find(params[:id])
   if edit_lion
     edit_lion.first_name = params[:first_name]
