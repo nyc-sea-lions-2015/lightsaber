@@ -1,25 +1,58 @@
 require 'sinatra'
 
-get '/' do
-  'Sealions'
+get '/sealions' do
+  @sealions = sealions.all
+  erb :'sealions/index'  
 end
 
-#Create
-post '/sealions' do
-  redirect '/'
+get '/sealions/new' do
+  erb :'sealions/new' 
 end
 
-#Read
-get '/sealions/:ID' do
-  "Sealion"
+get '/sealions/:id' do
+  @sealion = Sealions.find_by(id: params[:id]) 
+
+  if @sealion
+    erb :'sealions/show'
+  else
+    [404, 'No Sealion Found'] 
+  end
+
 end
 
-#Update
-put '/sealions/:ID' do
-  redirect '/'
+get '/sealions/:id/edit' do 
+  sealion = Sealions.find_by(id: params[:id])
+  erb :'sealions/edit', locals: {sealion: sealions} 
 end
 
-#Delete
-delete '/sealions/:ID' do
-  redirect '/'
+put '/sealions/:id' do
+  cur_sealions = Sealions.find_by(id: params[:id])
+
+  if cur_sealions 
+    cur_sealions.name = params[:name]
+    cur_sealions.age = params[:age]
+    cur_sealions.quirk = params[:quirk]
+
+    if cur_sealions.save
+      redirect "/sealions/#{cur_sealions.id}"
+    else
+      [500, 'something went wrong']
+    end
+
+  else
+    [404, "no sealions found"]
+  end
+
+end
+
+post '/sealions' do 
+  new_sealion = Sealions.new(name: params[:name],
+                            age:  params[:age],
+                            quirk: params[:quirk])
+  if new_sealions.save 
+    redirect "/sealions/#{new_sealion.id}" 
+  else 
+    [402,"You did something wrong"]
+  end
+  
 end
