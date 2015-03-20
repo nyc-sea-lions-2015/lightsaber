@@ -13,27 +13,42 @@ get '/sealions/new' do
   erb :'sealions/new_lion'
 end
 
+get '/sealions/:id/edit' do
+  @edit_lion = Sealion.find(params[:id])
+  erb :'sealions/edit'
+end
+
+get '/sealions/:id/delete' do
+  @del_lion = Sealion.find(params[:id])
+  erb :'sealions/delete'
+end
+
 get '/sealions/:id' do
   @sealion = Sealion.find(params[:id])
   erb :'sealions/show'
 end
 
-post '/sealions/' do
+post '/sealions' do
   new_lion = Sealion.new(first_name: params[:first_name],
                             last_name:  params[:last_name])
-  if new_lion.save
-    redirect "/sealions/#{new_lion.id}"
+  new_lion.save
+  redirect "/sealions/#{new_lion.id}"
+end
+
+put '/flippers/:id' do
+  @edit_lion = Sealion.find(params[:id])
+  if edit_lion
+    edit_lion.first_name = params[:first_name]
+    edit_lion.last_name = params[:last_name]
+    edit_lion.save
+    redirect "/sealions/#{@edit_lion.id}"
   else
-    [400..417, "Whoops, that wasn't right"]
+    [404, "no sealions found"]
   end
 end
 
-put '/sealions/:id' do
-  @edit_sealion = Sealion.find(params[:id])
-  redirect '/sealions'
-end
-
-delete '/sealions/:id' do
-  @del_sealion = Sealion.find(params[:id])
+delete '/sealions/:id/delete' do
+  del_lion = Sealion.find(params[:id])
+  del_lion.destroy
   redirect '/sealions'
 end
