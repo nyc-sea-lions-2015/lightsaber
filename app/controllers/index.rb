@@ -4,14 +4,29 @@ get '/' do
   'Eveanandi Blossom Butler'
 end
 
-put '/test_put' do
-  redirect '/'
+get '/sealions' do
+  'This route lists all of the sealions'
+  Sealion.all.to_json
 end
 
-post '/test_post' do
-  redirect '/'
+get '/sealions/:id' do
+  'This route finds a specific sealion'
+  Sealion.find(params[:id]).to_json
 end
 
-delete '/test_delete' do
-  redirect '/'
+put '/sealions/:id' do
+  # What are we supposed to put as the argument for update
+  Sealion.find(params[:id]).update_attributes!(params)
+  redirect '/sealions'
+end
+
+post '/sealions' do
+  # How do you capture these parameters, and then use them??
+  Sealion.create(params)
+  redirect '/sealions'
+end
+
+delete '/sealions/:id' do
+  Sealion.find(params[:id]).delete
+  redirect '/sealions'
 end
