@@ -1,5 +1,5 @@
 get '/sealions' do
-  @sealions = sealions.all
+  @sealions = Sealion.all
   erb :'sealions/index'  
 end
 
@@ -8,10 +8,10 @@ get '/sealions/new' do
 end
 
 get '/sealions/:id' do
-  @sealion = Sealions.find_by(id: params[:id]) 
+  sealion = Sealion.find_by_id(params[:id]) 
 
-  if @sealion
-    erb :'sealions/show'
+  if sealion
+    erb :'sealions/show', locals: {sealion: sealion}
   else
     [404, 'No Sealion Found'] 
   end
@@ -19,8 +19,8 @@ get '/sealions/:id' do
 end
 
 get '/sealions/:id/edit' do 
-  sealion = Sealions.find_by(id: params[:id])
-  erb :'sealions/edit', locals: {sealion: sealions} 
+  sealion = Sealion.find_by(id: params[:id])
+  erb :'/sealions/edit', locals: {sealion: sealion} 
 end
 
 put '/sealions/:id' do
