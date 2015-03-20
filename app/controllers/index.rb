@@ -22,17 +22,6 @@ get '/sealions/:id' do
   end
 end
 
-
-get '/sealions/:id/edit' do
-  sealion = Sealion.find_by(id: params[:id])
-  erb :edit_sealion, locals: {cur_sealion: sealion}
-end
-
-get '/sealions/:id/delete' do
-  sealion = Sealion.find_by(id: params[:id])
-  erb :delete_sealion, locals: {cur_sealion: sealion}
-end
-
 post '/sealions' do
   new_sealion = Sealion.new(name: params[:name])
 
