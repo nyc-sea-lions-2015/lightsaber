@@ -1,5 +1,5 @@
 require 'sinatra'
 
 get '/' do
-  "Natalia"
+  erb :index
 end
