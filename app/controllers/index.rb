@@ -9,6 +9,10 @@ get '/sealions' do
   erb :sealion
 end
 
+get '/sealions/new' do
+  erb :new_sealion
+end
+
 get '/sealions/:id' do
   @cur_sealion = Sealion.find_by(id: params[:id])
   if @cur_sealion
@@ -18,13 +22,15 @@ get '/sealions/:id' do
   end
 end
 
-get '/sealions/new' do
-  erb :new_sealion
-end
 
 get '/sealions/:id/edit' do
   sealion = Sealion.find_by(id: params[:id])
   erb :edit_sealion, locals: {cur_sealion: sealion}
+end
+
+get '/sealions/:id/delete' do
+  sealion = Sealion.find_by(id: params[:id])
+  erb :delete_sealion, locals: {cur_sealion: sealion}
 end
 
 post '/sealions' do
@@ -52,6 +58,16 @@ put '/sealions/:id' do
   end
 end
 
-delete '/delete' do
-  redirect '/'
+delete '/sealions/:id' do
+  cur_sealion = Sealion.find_by(id: params[:id])
+
+  if cur_sealion
+    if cur_sealion.destroy
+      redirect '/sealions'
+    else
+      [500, "didn't delete"]
+    end
+  else
+    [404, "no sealion found"]
+  end
 end

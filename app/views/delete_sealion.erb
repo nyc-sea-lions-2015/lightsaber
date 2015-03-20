@@ -1,0 +1,7 @@
+<form action='/sealions/<%= cur_sealion.id %>' method='post'>
+  <input type='hidden' name='_method' value='delete' />
+
+  <input type='text' placeholder='name' name='name'value="<%= cur_sealion.name %>" />
+
+  <input type='submit' value='Delete' />
+</form>
