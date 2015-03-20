@@ -36,19 +36,23 @@ post '/sealions' do
 end
 
 put '/sealions/:id' do
-  @edit_lion = Sealion.find(params[:id])
+  edit_lion = Sealion.find_by_id(params[:id])
   if edit_lion
     edit_lion.first_name = params[:first_name]
     edit_lion.last_name = params[:last_name]
     edit_lion.save
-    redirect "/sealions/#{@edit_lion.id}"
+    redirect "/sealions/#{edit_lion.id}"
   else
     [404, "no sealions found"]
   end
 end
 
-delete '/sealions/:id/delete' do
+delete '/sealions/:id' do
   del_lion = Sealion.find(params[:id])
-  del_lion.destroy
-  redirect '/sealions'
+  if del_lion
+    del_lion.destroy
+    redirect '/sealions'
+  else
+    [500, "IMPOSSIBLE TO DELETE!"]
+  end
 end

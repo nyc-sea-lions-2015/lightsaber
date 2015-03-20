@@ -1,7 +1,7 @@
 <h2 align="center">Edit <%= @edit_lion.first_name %> <%= @edit_lion.last_name %>'s Page</h2>
 <hr>
 
-<form action= '/sealions' method='post'>
+<form action= '/sealions/<%= @edit_lion.id%>' method='post'>
 <input type="hidden" name="_method" value="put">
 
   <input type='text' placeholder='First Name' name='first_name' value="<%= @edit_lion.first_name %>" />
