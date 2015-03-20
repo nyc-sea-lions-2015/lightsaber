@@ -1,0 +1,7 @@
+<ul>
+  <% @sealions.each do |sealion| %>
+    <li>
+      <a href= "/sealions/<%=sealion.id%>"><%= sealion.name %></a> 
+    </li>
+  <% end %>
+</ul>
