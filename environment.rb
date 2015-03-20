@@ -1,3 +1,5 @@
+require 'erb'
+
 ENV['BUNDLE_GEMFILE'] ||= File.expand_path('../Gemfile', __FILE__)
 
 require 'sinatra'
@@ -14,3 +16,9 @@ APP_NAME = APP_ROOT.basename.to_s
 
 #Load Controllers
 Dir[APP_ROOT.join('app', 'controllers', '*.rb')].each { |file| require file }
+
+
+configure do
+ set :root, APP_ROOT.to_path
+ set :views, File.join(APP_ROOT,"app","views")
+end
