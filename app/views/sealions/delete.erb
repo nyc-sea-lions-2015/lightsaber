@@ -2,9 +2,9 @@
 <hr>
 
 <form action= '/sealions/<%= @del_lion.id%>' method='post'>
-<input type="hidden" name="_method" value="delete">
+  <input type="hidden" name="_method" value="delete">
 
-  <input type='text' placeholder='Confirm ID' name='id' value="<%= @del_lion.id %>" />
-
+  <div align="center">
   <input type='submit' value='Delete Sealion!' />
+  </div>
 </form>
