@@ -1,0 +1,1 @@
+Sealion.create([{:name =>'Kurt'}])
