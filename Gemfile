@@ -6,6 +6,7 @@ gem 'pg'
 gem 'activesupport'
 gem 'activerecord'
 group :test do
+  gem 'jasmine'
     gem 'rspec'
     gem 'rack-test'
 end
