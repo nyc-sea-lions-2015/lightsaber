@@ -1,37 +1,58 @@
 require 'sinatra'
 
 get '/' do
-  'Ben Cheng'
-  redirect '/sealions'
+  erb :index
 end
 
 get '/sealions' do
-  # 'Yay, sea lions!'
   @sealion = Sealion.all
-  @names = []
-  @sealion.each {|person| @names << (person.first_name + " " + person.last_name)}
-  @names.join(", ")
+  erb :'sealions/index'
+end
+
+get '/sealions/new' do
+  erb :'sealions/new_lion'
+end
+
+get '/sealions/:id/edit' do
+  @edit_lion = Sealion.find(params[:id])
+  erb :'sealions/edit'
+end
+
+get '/sealions/:id/delete' do
+  @del_lion = Sealion.find(params[:id])
+  erb :'sealions/delete'
 end
 
 get '/sealions/:id' do
   @sealion = Sealion.find(params[:id])
-  @sealion.first_name + " " + @sealion.last_name
-  # @id = params[:id]
-  # "#{@id}"
+  erb :'sealions/show'
 end
 
-post '/sealions/:id' do
-  new_sealion = Sealion.create(params)
-  redirect '/sealions'
+post '/sealions' do
+  new_lion = Sealion.new(first_name: params[:first_name],
+                            last_name:  params[:last_name])
+  new_lion.save
+  redirect "/sealions/#{new_lion.id}"
 end
 
 put '/sealions/:id' do
-  edit_sealion = Sealion.find(params[:id])
-  redirect '/sealions'
+  edit_lion = Sealion.find_by_id(params[:id])
+  if edit_lion
+    edit_lion.first_name = params[:first_name]
+    edit_lion.last_name = params[:last_name]
+    edit_lion.save
+    redirect "/sealions/#{edit_lion.id}"
+  else
+    [404, "no sealions found"]
+  end
 end
 
 delete '/sealions/:id' do
-  del_sealion = Sealion.find(params[:id])
-  del_sealion.destory
-  redirect '/sealions'
+  del_lion = Sealion.find(params[:id])
+  if del_lion
+    del_lion.destroy
+    redirect '/sealions'
+  else
+    [500, "IMPOSSIBLE TO DELETE!"]
+  end
 end
