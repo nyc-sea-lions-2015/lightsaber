@@ -102,3 +102,13 @@ namespace :db do
     end
   end
 end
+
+require 'jasmine'
+
+load 'jasmine/tasks/jasmine.rake'
+
+namespace :test do
+ task :jasmine do
+   abort 'No Jasmine run (sudo) gem instal jasmine'
+ end
+end
