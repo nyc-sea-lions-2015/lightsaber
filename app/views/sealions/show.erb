@@ -1,0 +1,16 @@
+<center>
+<h1> Sealion <%= @person.first_name %> </h1>
+<p> Name: <em><%= @person.first_name %> <%= @person.last_name %> </em></p>
+<p>Age: <em><%= @person.age %> </em></p>
+
+<p>Gender: <em><%= @person.gender %></em></p>
+
+<p><a href='/sealions/<%=@person.id%>/edit'>Edit info</a></p>
+
+<form action='/sealions/<%=@person.id%>/delete' method='post'>
+  <input type='hidden' name='_method' value='delete'/>
+  <input type='submit' value='Delete!'> </form>
+
+
+<p><a href="/sealions">Go back to Sealions menu</a></p>
+</center>

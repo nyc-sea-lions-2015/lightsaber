@@ -1,0 +1,10 @@
+<center>
+<h1> Sealion Members </h1>
+
+<% @people.each do |i| %>
+<p><a href='/sealions/<%=i.id %>'> <%= i.first_name %> </a></p>
+<% end %>
+
+<p><a href="/sealions/new">Add new member</a></p>
+
+</center>

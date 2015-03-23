@@ -1,0 +1,12 @@
+<center>
+  <h1> Edit Sealion Information </h1>
+  <form action='/sealions/<%=@sealion_to_update.id%>' method='post'>
+    <input type='hidden' name='_method' value='put'/>
+    <input type='text' name='first_name' value='<%=@sealion_to_update.first_name%>'/>
+    <input type='text' name='last_name' value='<%=@sealion_to_update.last_name%>'/>
+    <input type='text' name='age' value='<%=@sealion_to_update.age%>'/>
+    <input type='text' name='gender' value='<%=@sealion_to_update.gender%>'/>
+    <input type='submit' value='Update!'></form>
+
+
+</center>
