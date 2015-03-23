@@ -13,6 +13,33 @@ get '/sealions/:id' do
 end
 
 
+get '/sealions/:id/edit' do
+  @sealion_to_update = Sealion.find_by(:id => params[:id])
+  erb :"sealions/edit"
+end
+
+put '/sealions/:id' do
+  @sealion_update = Sealion.find_by(:id => params[:id])
+  if @sealion_update
+    @sealion_update.first_name = params[:first_name]
+    @sealion_update.last_name = params[:last_name]
+    @sealion_update.age = params[:age]
+    @sealion_update.gender = params[:gender]
+
+    if @sealion_update.save
+      redirect "/sealions/#{@sealion_update.id}"
+    else
+      [500, "Something is wrong with your new information"]
+    end
+  else
+    [404, "Something went wrong"]
+  end
+end
+
+
+
+
+
 post '/sealions' do
   @new_sealion = Sealion.find_or_initialize_by(:first_name => params[:first_name],
                                                 :last_name => params[:last_name],

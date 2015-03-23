@@ -5,6 +5,8 @@
 
 <p>Gender: <em><%= @person.gender %></em></p>
 
+<p><a href='/sealions/<%=@person.id%>/edit'>Edit info</a></p>
+
 <form action='/sealions/<%=@person.id%>/delete' method='post'>
   <input type='hidden' name='_method' value='delete'/>
   <input type='submit' value='Delete!'> </form>
