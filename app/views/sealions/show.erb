@@ -4,5 +4,11 @@
 <p>Age: <em><%= @person.age %> </em></p>
 
 <p>Gender: <em><%= @person.gender %></em></p>
+
+<form action='/sealions/<%=@person.id%>/delete' method='post'>
+  <input type='hidden' name='_method' value='delete'/>
+  <input type='submit' value='Delete!'> </form>
+
+
 <p><a href="/sealions">Go back to Sealions menu</a></p>
 </center>

@@ -25,30 +25,8 @@ post '/sealions' do
   end
 end
 
-
-# put '/update_something' do
-#   params
-#   puts 'Hi Sam, you just updated something'
-#   redirect '/sealions'
-# end
-
-put '/update_member' do
-  params
-  @updated = Sealion.update_attributes(params)
-  'You just updated #{@updated.first_name.to_json}'
-  redirect '/sealions'
-end
-
-# delete '/delete_something' do
-#   params
-#   puts 'Hi Sam, you just deleted something'
-#   redirect '/sealions'
-# end
-
-delete '/delete_member' do
-  params
-  @deleted = Sealion.find_by(params)
-  @deleted.destroy
-  '...deleted.'
-  redirect '/sealions'
+delete '/sealions/:id/delete' do
+  @sealion_to_delete = Sealion.find_by(:id => params[:id])
+  @sealion_to_delete.destroy
+  redirect "/sealions"
 end
