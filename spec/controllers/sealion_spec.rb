@@ -1,4 +1,4 @@
-require 'spec_helper'
+require_relative '../spec_helper'
 
 describe 'Sealions Model' do
   it 'should get the / route' do
