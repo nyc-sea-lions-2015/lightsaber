@@ -1,11 +1,9 @@
 source 'https://rubygems.org'
-
 gem 'sinatra'
-gem 'activerecord'
-gem 'rake'
 gem 'pg'
-gem 'activesupport'
-
+gem 'activerecord'
+gem 'support'
+gem 'rake'
 group :test do
     gem 'rspec'
     gem 'rack-test'
