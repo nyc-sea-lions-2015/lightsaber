@@ -1,3 +1,4 @@
+require 'jasmine'
 require_relative 'environment'
 # require ::File.expand_path('../environment', __FILE__)
 
@@ -98,5 +99,13 @@ namespace :db do
     task :prepare do
       system "rake db:migrate RACK_ENV=test"
     end
+  end
+
+load 'jasmine/tasks/jasmine.rake'
+
+  namespace :test do
+   task :jasmine do
+     abort 'No Jasmine run (sudo) gem instal jasmine'
+   end
   end
 end
