@@ -19,7 +19,7 @@ Calculator.prototype = {
 };
 
 var calc = new Calculator();
-console.log(calc.add(3,2));
-console.log(calc.subtract(3,2));
-console.log(calc.multiply(3,2));
-console.log(calc.divide(3,2));
+console.log(calc.add(7,4));
+console.log(calc.subtract(7,4));
+console.log(calc.multiply(7,4));
+console.log(calc.divide(7,4));
