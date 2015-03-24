@@ -48,7 +48,7 @@ put '/sealions/:id' do
     end
 
   else
-    [404, "no sealion found"]
+    [404, "Could not edit sealion!"]
   end
 
 end
