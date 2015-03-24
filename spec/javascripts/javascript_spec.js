@@ -6,9 +6,8 @@ describe ("canary test", function(){
 
 describe("calculator", function() {
   it("is defined", function() {
-    var calc = calculator;
     expect(calculator).toBeDefined();
-  })
+  });
 
   describe("add", function() {
     it("is defined", function() {
@@ -38,14 +37,14 @@ describe("calculator", function() {
     });
   });
 
-  describe("multiple", function() {
+  describe("multiply", function() {
     it("is defined", function() {
       var calc = calculator;
       expect(calc.multiple()).toBeDefined();
     });
   });
 
-  describe("multple", function() {
+  describe("multply", function() {
     it("returns the correct product", function() {
       var calc = calculator;
       expect(calc.multiple(3, 3)).toBe(9);

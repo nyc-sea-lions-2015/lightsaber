@@ -5,7 +5,7 @@ add: function(x, y) {
 subtract: function(x, y) {
   return (x - y);
   },
-multiple: function(x, y){
+multiply: function(x, y){
   return (x * y);
   },
 divide: function(x, y) {
