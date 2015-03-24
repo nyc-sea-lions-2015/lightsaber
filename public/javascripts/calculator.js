@@ -19,3 +19,9 @@ Calculator.prototype = {
 var calc = new Calculator();
 
 console.log(calc);
+
+function calculate(elmnt,clr) {
+  // elmnt.style.color = clr;
+  alert("hi");
+}
+
