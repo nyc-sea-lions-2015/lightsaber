@@ -1,3 +1,3 @@
 get '/' do
-  "Calculator"
+  erb :index
 end
