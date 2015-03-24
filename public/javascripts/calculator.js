@@ -1,27 +1,25 @@
 var Calculator = function() {
-   this.total = 0;
-   this.current = 0;
-   this.operation = null;
-   this.fractionExp = 0;
+    this.total = 0;
+    this.current = 0;
 };
 
 Calculator.prototype = {
-  add: function() {
-     this.calculate();
-     this.operation = function(a, b) {
-         return a + b;
-     };
-     this.setCurrent(0, "");
-     this.fractionExp = 0;
-   }
+    add: function(a,b) {
+      return a + b;
+    },
+    subtract: function(a,b) {
+      return a - b;
+    },
+    multiply: function(a,b) {
+      return a * b;
+    },
+    divide: function(a,b) {
+      return a / b;
+    }
 };
 
 var calc = new Calculator();
-
-console.log(calc);
-
-function calculate(elmnt,clr) {
-  // elmnt.style.color = clr;
-  alert("hi");
-}
-
+console.log(calc.add(3,2));
+console.log(calc.subtract(3,2));
+console.log(calc.multiply(3,2));
+console.log(calc.divide(3,2));
