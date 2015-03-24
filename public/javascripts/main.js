@@ -1,14 +1,14 @@
 var calculator = {
     add : function(x,y){
-                    return 0;
-                    },
-    subtract: function(){
-                    return 0;
-                        },
-    multiply: function(){
-                    return 0;
-                        },
-    divide: function(){
-                    return 0;
-                      }
+        return (x+y);
+    },
+    subtract: function(x,y){
+        return (x-y);
+    },
+    multiply: function(x,y){
+        return (x*y);
+    },
+    divide: function(x,y){
+        return (x/y);
+    }
 };
