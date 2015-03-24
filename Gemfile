@@ -4,6 +4,7 @@ gem 'rake'
 gem 'activesupport'
 gem 'activerecord'
 gem 'pg'
+gem 'jasmine'
 
 group :test do
     gem 'rspec'
