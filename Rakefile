@@ -100,6 +100,7 @@ namespace :db do
       system "rake db:migrate RACK_ENV=test"
     end
   end
+end
 
 load 'jasmine/tasks/jasmine.rake'
 
@@ -108,4 +109,3 @@ load 'jasmine/tasks/jasmine.rake'
      abort 'No Jasmine run (sudo) gem instal jasmine'
    end
   end
-end
