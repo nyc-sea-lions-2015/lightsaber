@@ -3,16 +3,20 @@ describe ('Javascript Calculator', function(){
     expect(calculator).toBeDefined();
   });
 
-  it ('Should add two variables', function(){
+  it ('Should add two numbers', function(){
     expect(calculator.add(1, 2)).toEqual(3);
   });
 
-  it ('Should subtract two variables', function(){
+  it ('Should subtract two numbers', function(){
     expect(calculator.subtract(3, 1)).toEqual(2);
   });
 
-  it ('Should add multiply two variables', function(){
+  it ('Should multiply two numbers', function(){
     expect(calculator.multiply(3, 9)).toEqual(27);
+  });
+
+  it ('Should divide two numbers', function(){
+    expect(calculator.divide(36, 6)).toEqual(6);
   });
 
 });
