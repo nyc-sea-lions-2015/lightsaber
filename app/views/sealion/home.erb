@@ -1,0 +1,10 @@
+<h3> Sealions </h3>
+<table>
+  <tbody>
+    <%@sealions.each do |sealion|%>
+      <%= erb:"/_viewSealion", locals: {sealion: sealion} %>
+    <%end%>
+  </tbody>
+</table>
+
+<div>Error Can not Continue!</div>

@@ -1,7 +1,9 @@
 require 'sinatra'
 
 get '/' do
+  @sealions = Sealion.all
   'I am a Sealion'
+  erb :"sealion/home"
 end
 
 post '/sealions' do

@@ -19,3 +19,18 @@ var calculator = {
     }
   }
 };
+
+var errorModule = {
+  show: function(element){
+    foundElement = document.getElementsById(element)
+    foundElement.style.visibility = 'visible';
+  },
+  hide: function(element){
+    foundElement = document.getElementsById(element)
+    foundElement.style.visibility = 'hidden';
+  },
+  change: function(element, text){
+    foundElement = document.getElementsById(element)
+    foundElement.replace(text);
+  }
+}
