@@ -1,3 +1,4 @@
+require 'jasmine'
 require ::File.expand_path('../environment', __FILE__)
 
 require 'rake'
@@ -7,7 +8,6 @@ task "console" do
     exec "irb -r./environment"
 end
 
-require 'jasmine'
 
 load 'jasmine/tasks/jasmine.rake'
 
