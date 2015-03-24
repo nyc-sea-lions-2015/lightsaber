@@ -8,6 +8,10 @@ task "console" do
     exec "irb -r./environment"
 end
 
+require 'jasmine'
+
+load 'jasmine/tasks/jasmine.rake'
+
 namespace :generate do
   desc "Create an empty model in app/models, e.g., rake generate:model NAME=User"
   task :model do
@@ -97,6 +101,9 @@ namespace :db do
     desc "Migrate test database"
     task :prepare do
       system "rake db:migrate RACK_ENV=test"
+    end
+    task :jasmine do
+     abort 'No Jasmine run (sudo) gem instal jasmine'
     end
   end
 end
