@@ -3,8 +3,20 @@ describe ('Javascript Calculator', function(){
     expect(calculator).toBeDefined();
   });
 
-  it ('Should contain an add function', function() {
+  it ('Should contain an addition function', function() {
     expect(calculator.add).toBeDefined()
+  });
+
+  it ('Should contain a subtraction function', function() {
+    expect(calculator.subtract).toBeDefined()
+  });
+
+  it ('Should contain a multiplication function', function() {
+    expect(calculator.multiply).toBeDefined()
+  });
+
+  it ('Should contain a division function', function() {
+    expect(calculator.divide).toBeDefined()
   });
 
   it ('Should add two numbers', function(){
