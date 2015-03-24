@@ -1,5 +1,6 @@
 describe ('Javascript Calculator', function(){
-  it ('Should have a name', function(){
+  it ('Should be defined', function(){
     expect(calculator).toBeDefined();
   });
+
 });
