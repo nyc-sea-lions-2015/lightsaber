@@ -31,6 +31,6 @@ var errorModule = {
   },
   change: function(element, text){
     foundElement = document.getElementsById(element)
-    foundElement.replace(text);
+    foundElement.replaceWith(text);
   }
 }
