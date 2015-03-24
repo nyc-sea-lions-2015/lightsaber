@@ -1,0 +1,13 @@
+<form action='/sealions/<%= lion.id %>' method='post'>
+  <input type='hidden' name='_method' value='put'/>
+  <input type='text' name='name' value="<%= lion.name %>"/>
+  <input type='text' placeholder='age' name='age' value="<%= lion.age %>"/>
+  <input type='text' placeholder='quirk' name='quirk' value="<%= lion.quirk %>"/>
+
+  <input type='submit' value='Update'/>
+</form>
+
+<form action='/sealions/<%= lion.id %>/delete' method='post'>
+  <input type='hidden' name='_method' value='delete'/>
+  <input type='Submit' value='Delete' />
+</form>
