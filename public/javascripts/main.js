@@ -1,14 +1,14 @@
 var calculator = {
-    add : function(){
-                    return sum;
+    add : function(x,y){
+                    return 0;
                     },
     subtract: function(){
-                    return difference;
+                    return 0;
                         },
     multiply: function(){
-                    return product;
+                    return 0;
                         },
     divide: function(){
-                    return quotient;
+                    return 0;
                       }
 };
