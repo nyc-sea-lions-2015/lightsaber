@@ -5,7 +5,7 @@ describe 'index controller' do
     it 'should get' do
       get '/sealions'
       expect(last_response).to be_ok
-      expect(last_response.body).to include('ARG ARG')
+      expect(last_response.body).to include('tigers & bears, OH MY!')
     end
   end
   describe '#post' do
@@ -14,7 +14,7 @@ describe 'index controller' do
       expect(last_response).to be_redirect
       follow_redirect!
       expect(last_response).to be_ok
-      expect(last_response.body).to include('ARG ARG')
+      expect(last_response.body).to include('tigers & bears, OH MY!')
     end
   end
   describe '#put' do
@@ -23,7 +23,7 @@ describe 'index controller' do
       expect(last_response).to be_redirect
       follow_redirect!
       expect(last_response).to be_ok
-      expect(last_response.body).to include('ARG ARG')
+      expect(last_response.body).to include('tigers & bears, OH MY!')
     end
   end
   describe '#delete' do
@@ -32,7 +32,7 @@ describe 'index controller' do
       expect(last_response).to be_redirect
       follow_redirect!
       expect(last_response).to be_ok
-      expect(last_response.body).to include('ARG ARG')
+      expect(last_response.body).to include('tigers & bears, OH MY!')
     end
   end
 end
