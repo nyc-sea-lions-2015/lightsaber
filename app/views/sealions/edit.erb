@@ -1,0 +1,7 @@
+<form action='/sealions/<%=sealion.id%>' method='post'>
+  <input type='hidden' name='_method' value='put' />
+
+  <input type='text' placeholder='name' name='name'value="<%= sealion.name %>" />
+
+  <input type='submit' value='Update' />
+</form>
