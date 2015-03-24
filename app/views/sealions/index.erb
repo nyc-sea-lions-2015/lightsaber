@@ -1,0 +1,9 @@
+<div class="container">
+  <h2> Currently our sealion's community includes these sealions:</h2>
+  <%sealions.each do |sealion|%>
+    <ul><li><a href="/sealions/<%=sealion.id %>"><%=sealion.name%></a>
+        </li>
+    </ul>
+  <%end%>
+  <a href="sealions/new">create new sealion</a>
+</div>

@@ -1,0 +1,10 @@
+<div class="container">
+  <h2>You can update <%=sealion.name%>'s info here:</h2>
+
+<form action="/sealions/<%=sealion.id%>" method="POST">
+  <input type="hidden" name="_method" value="put" />
+  <input type="text" name="name" placeholder="name"><br><br>
+  <input type="text" name="favourite_dance" placeholder="favourite dance"><br><br>
+  <input type="submit" value="Save">
+</form>
+</div>
