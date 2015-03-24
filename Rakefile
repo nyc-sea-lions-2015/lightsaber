@@ -85,6 +85,6 @@ end
 
 namespace :test do
  task :jasmine do
-   abort 'No Jasmine run (sudo) gem instal jasmine'
+   abort 'No Jasmine run (sudo) gem install jasmine'
  end
 end
