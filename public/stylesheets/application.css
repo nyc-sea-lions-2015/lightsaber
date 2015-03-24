@@ -2,3 +2,10 @@
   margin: 50px;
   padding: 50px;
 }
+#error-message {
+  background-color: red;
+  color: white;
+  font-weight: bold;
+  height: 50px;
+  visibility: hidden;
+}

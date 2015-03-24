@@ -34,3 +34,18 @@ describe("calculator test", function() {
      expect(calculator.divide(24,8)).toEqual(3);
   });
 });
+
+describe("errorModule test", function() {
+  it("it exists",function() {
+    expect(errorModule).toBeDefined();
+  });
+  it("has show function", function() {
+    expect(errorModule.show).toBeDefined();
+  });
+  it("has hide function", function() {
+    expect(errorModule.hide).toBeDefined();
+  });
+  it("has changeText function", function() {
+    expect(errorModule.changeText).toBeDefined();
+  });
+});
