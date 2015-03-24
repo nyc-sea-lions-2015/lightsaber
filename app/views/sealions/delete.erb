@@ -1,0 +1,9 @@
+<h2 align="center">Are you sure you want to delete <%= @del_lion.first_name %> <%= @del_lion.last_name %>'s Page?</h2>
+<hr>
+
+<form action= '/sealions/<%= @del_lion.id%>' method='post'>
+  <input type="hidden" name="_method" value="delete">
+  <div align="center">
+    <input type='submit' value='Delete Sealion!' />
+  </div>
+</form>
