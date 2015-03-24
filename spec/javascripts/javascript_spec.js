@@ -3,6 +3,10 @@ describe ('Javascript Calculator', function(){
     expect(calculator).toBeDefined();
   });
 
+  it ('Should contain an add function', function() {
+    expect(calculator.add).toBeDefined()
+  });
+
   it ('Should add two numbers', function(){
     expect(calculator.add(1, 2)).toEqual(3);
   });
