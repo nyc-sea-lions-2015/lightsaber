@@ -11,4 +11,8 @@ describe ('Javascript Calculator', function(){
     expect(calculator.subtract(3, 1)).toEqual(2);
   });
 
+  it ('Should add multiply two variables', function(){
+    expect(calculator.multiply(3, 9)).toEqual(27);
+  });
+
 });
