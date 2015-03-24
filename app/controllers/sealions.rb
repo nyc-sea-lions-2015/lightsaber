@@ -54,6 +54,8 @@ put '/sealions/:id' do
 end
 
 
-delete '/sea_delete' do
+delete '/sealions/:id/delete' do
+  lion_to_delete = Sealion.find_by(id: params[:id])
+  lion_to_delete.destroy
   redirect '/sealions'
 end

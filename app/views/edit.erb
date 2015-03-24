@@ -6,3 +6,8 @@
 
   <input type='submit' value='Update'/>
 </form>
+
+<form action='/sealions/<%= lion.id %>/delete' method='post'>
+  <input type='hidden' name='_method' value='delete'/>
+  <input type='Submit' value='Delete' />
+</form>
