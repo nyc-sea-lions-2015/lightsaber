@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" type="text/css" href="/css/error.css">
   <script src='javascripts/main.js'></script>
   <title><%= @title || "LightSaber" %></title>
 </head>
 <body>
+    <div id="header"><%= erb :"_error" %></div>
     <%= yield %>
 </body>
 </html>

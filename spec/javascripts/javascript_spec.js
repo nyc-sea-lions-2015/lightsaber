@@ -4,6 +4,30 @@ describe("Canarytest", function(){
   });
 });
 
+describe("errorModule", function(){
+  it("should return a errorModule object", function(){
+    expect(errorModule).toBeDefined;
+  });
+
+  describe("errorModule.hide", function(){
+    it("should return hide function", function(){
+      expect(errorModule.hide).toBeDefined;
+    });
+  });
+
+  describe("errorModule.show", function(){
+    it("should return show function", function(){
+      expect(errorModule.show).toBeDefined;
+    });
+  });
+
+  describe("errorModule.edit", function(){
+    it("should return edit function", function(){
+      expect(errorModule.edit).toBeDefined;
+    });
+  });
+});
+
 describe ("calculator", function(){
   it("should return a calculator object", function(){
     expect(calculator).toBeDefined();

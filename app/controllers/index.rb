@@ -6,7 +6,7 @@ end
 
 get '/sealions' do
   @all_sealions = Sealion.all
-  erb :sealion
+  erb :sealions
 end
 
 get '/sealions/new' do

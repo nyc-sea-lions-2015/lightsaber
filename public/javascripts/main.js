@@ -12,3 +12,19 @@ var calculator = {
         return (x/y);
     }
 };
+
+
+var errorModule = {
+    hide: function(){
+        var test = document.getElementById("error");
+        test.style.display = "none";
+    },
+    show: function(){
+        var test = document.getElementById("error");
+        test.style.display = "block";
+    },
+    edit: function(input){
+        var test = document.getElementById("error");
+        test.innerText = input;
+    }
+};
