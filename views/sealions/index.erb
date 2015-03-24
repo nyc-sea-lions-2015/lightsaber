@@ -1,0 +1,18 @@
+<div class="container">
+
+  <h1> WE ARE SEALIONS "...Lions! Tigers! Bears! Oh My!" </h1>
+
+  <ul><p>These are my sealion friends:</p>
+    <% Sealion.all.each do |sealion|%>
+    <li><a href="/sealions/<%=sealion.id%>"><%= sealion.name %></li>
+    <%end%>
+  </ul>
+
+
+
+
+
+
+
+
+</div>
