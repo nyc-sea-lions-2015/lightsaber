@@ -7,6 +7,16 @@ task "console" do
     exec "irb -r./environment"
 end
 
+require 'jasmine'
+
+load 'jasmine/tasks/jasmine.rake'
+
+namespace :test do
+ task :jasmine do
+   abort 'No Jasmine run (sudo) gem instal jasmine'
+ end
+end
+
 namespace :generate do
 
   task :model do
