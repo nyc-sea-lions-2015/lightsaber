@@ -1,0 +1,26 @@
+<link rel="stylesheet" href="/css/normalize.css">
+  <!--
+    application.css is where you put your styles
+  -->
+<link rel="stylesheet" href="/css/application.css">
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="/css/normalize.css">
+
+  <link rel="stylesheet" href="/css/application.css">
+
+  <script src='javascripts/main.js'></script>
+  <title><%= @title || "LightSaber" %></title>
+</head>
+<body onload="errorModule()">
+  <header>
+    <%= erb :_error %>
+  </header>
+    <button type="button" id="error">Click here first!!</button>
+    <button type="button" id="fixer">Fix it here!!</button>
+    <button type="button" id="change">Change EVERYTHING!!</button>
+    <%= yield %>
+</body>
+</html>
