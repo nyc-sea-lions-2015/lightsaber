@@ -1,10 +1,24 @@
+<link rel="stylesheet" href="/css/normalize.css">
+  <!--
+    application.css is where you put your styles
+  -->
+<link rel="stylesheet" href="/css/application.css">
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="/css/normalize.css">
+
+  <link rel="stylesheet" href="/css/application.css">
+
   <script src='javascripts/main.js'></script>
   <title><%= @title || "LightSaber" %></title>
 </head>
 <body>
+  <header>
+    <%= erb :_error %>
+  </header>
+
     <%= yield %>
 </body>
 </html>

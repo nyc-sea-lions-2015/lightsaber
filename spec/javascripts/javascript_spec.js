@@ -10,23 +10,9 @@ describe("calculator", function() {
   });
 
   describe("add", function() {
-    it("is defined", function() {
-      var calc = calculator;
-      expect(calc.add()).toBeDefined();
-    });
-  });
-
-  describe("add", function() {
     it("returns the correct sum", function() {
       var calc = calculator;
       expect(calc.add(3, 3)).toBe(6);
-    });
-  });
-
-  describe("subtract", function() {
-    it("is defined", function() {
-      var calc = calculator;
-      expect(calc.subtract()).toBeDefined();
     });
   });
 
@@ -37,24 +23,10 @@ describe("calculator", function() {
     });
   });
 
-  describe("multiply", function() {
-    it("is defined", function() {
-      var calc = calculator;
-      expect(calc.multiple()).toBeDefined();
-    });
-  });
-
   describe("multply", function() {
     it("returns the correct product", function() {
       var calc = calculator;
       expect(calc.multiple(3, 3)).toBe(9);
-    });
-  });
-
-  describe("divide", function() {
-    it("is defined", function() {
-      var calc = calculator;
-      expect(calc.divide()).toBeDefined();
     });
   });
 
