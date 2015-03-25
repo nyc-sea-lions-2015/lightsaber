@@ -14,11 +14,12 @@
   <script src='javascripts/main.js'></script>
   <title><%= @title || "LightSaber" %></title>
 </head>
-<body>
+<body onload="errorModule()">
   <header>
     <%= erb :_error %>
   </header>
-
+    <button type="button" id="error">Click here first!!</button>
+    <button type="button" id="fixer">Fix it here!!</button>
     <%= yield %>
 </body>
 </html>
