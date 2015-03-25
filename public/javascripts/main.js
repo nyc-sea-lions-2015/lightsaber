@@ -16,6 +16,7 @@
 var errorModule = function() {
   var show_error = document.getElementById("error");
   var hide_error = document.getElementById("fixer");
+  var change_error = document.getElementById("change")
 
     show_error.addEventListener('click', function(){
       var error_button = document.getElementById("error_msg");
@@ -24,4 +25,9 @@ var errorModule = function() {
     hide_error.addEventListener('click', function(){
       var error_button = document.getElementById("error_msg");
       error_button.style.visibility="hidden"});
+
+    change_error.addEventListener('click', function(){
+      var error_button = document.getElementById("error_msg");
+      var prompt_msg = prompt("What's the error?")
+      error_button.innerHTML=prompt_msg});
 };
