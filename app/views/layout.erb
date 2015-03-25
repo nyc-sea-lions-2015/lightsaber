@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src='javascripts/main.js'></script>
+    <link rel='stylesheet' href='/stylesheets/application.css' type='text/css' />
+    <title><%= @title || "LightSaber" %></title>
+  </head>
+  <body>
+    <header>
+      <%= erb :"_error" %>
+    </header>
+      <%= yield %>
+  </body>
+</html>

@@ -1,0 +1,6 @@
+#error_message {
+  background-color: red;
+  font-weight: bold;
+  color: white;
+  visibility: hidden;
+}
