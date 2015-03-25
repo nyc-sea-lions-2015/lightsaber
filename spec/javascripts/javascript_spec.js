@@ -1,9 +1,3 @@
-describe("Canary test", function() {
-  it("should work", function() {
-    expect(true).toBe(true);
-  });
-});
-
 var myObj = {a: 7, b: 4}
 var calc = new Calculator();
 
